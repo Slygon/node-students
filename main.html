@@ -1,0 +1,91 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galit and koby app</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="themes/our_app.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile.structure-1.4.3.min.css" />
+  <link rel="stylesheet" type="text/css" href="my_d.css">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="showCoupons.js"></script>
+  <script src="sendDataToServer.js"></script>
+  <script src="Scripts.js"></script>
+</head>
+<body>
+
+<div data-role="page" id = "menu" data-theme="a">
+  <div data-role="header" data-position="fixed">
+    <h1>Coupons World<img src="logo.png" alt="Low resolution logo" width="50" height="50" class="my_head_pic"/></h1>
+  </div>
+  <div data-role="content">
+    <div align="center">
+      <h2>menu</h2>
+    </div>
+    <div align="center">
+      <a href="#nearby_page" data-role="button" data-icon="location" data-inline="true" >&#160;&#160nearby&#160;&#160;&#160;&#160;&#160;&#160;</a>
+      <br>
+      <a href="#popup" data-role="button" data-icon="search"data-rel="dialog" data-transition="pop" data-inline="true"  >pick location</a>
+    </div>
+    <div data-role="footer"  data-position="fixed">
+      <h4>about footer</h4>
+    </div>
+  </div>
+</div>
+
+<div data-role="page" id="nearby_page" data-theme="a">
+  <div data-role="header"  data-position="fixed">
+    <a href="#menu" data-icon="home" data-iconpos="notext">home</a>
+      <h1>Nearby coupens</h1>
+  </div><!-- /header -->
+
+  <div data-role="content" data-theme="a" >
+    <div class="content-primary">
+      <ul data-role="listview" data-filter="true"></ul>
+    </div>
+  </div><!-- /content -->
+
+  <div data-role="footer"  data-position="fixed">
+    <h4>Page Footer</h4>
+  </div><!-- /footer -->
+</div><!-- /page two -->
+
+<!-- Start of third page: #popup -->
+<div data-role="page" id="popup">
+  <div data-role="header" data-theme="a">
+    <h1>Pick your location</h1>
+  </div><!-- /header -->
+  <div data-role="content" data-theme="a">
+    <div data-role="controlgroup" >
+      <a href="#coupons_by_area" data-role="button" onclick="send_data("North")">North</a>
+      <a href="#coupons_by_area" data-role="button" onclick="sendDataToServer("Haifa")">Haifa</a>
+      <a href="#coupons_by_area" data-role="button" onclick="sendDataToServer("Sharon")">Sharon</a>
+      <a href="#coupons_by_area" data-role="button" onclick="sendDataToServer("Tel Aviv")">Tel Aviv</a>
+      <a href="#coupons_by_area" data-role="button" onclick="sendDataToServer("South")">South</a>
+    </div>
+  </div>
+  <div data-role="footer"  data-position="fixed">
+  </div><!-- /footer -->
+</div><!-- /page popup -->
+
+<div data-role="page" id = "coupons_by_area" data-theme="a">
+  <div data-role="header" data-position="fixed">
+    <h1>Coupons World<img src="logo.png" alt="Low resolution logo" width="50" height="50" class="my_head_pic"/></h1>
+  </div>
+  <div data-role="content">
+    <div align="center">
+      <h3>Coupons By Area</h3>
+    </div>
+    <ul data-role="listview" id="list">
+    </ul>
+  </div>
+  <div data-role="footer"  data-position="fixed">
+    <h4>about footer</h4>
+  </div>
+</div>
+
+</body>
+</html>
